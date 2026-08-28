@@ -643,6 +643,7 @@ h2.display { font-size: clamp(1.9rem, 6.5vw, 2.8rem); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 42%;
   transition: transform 0.5s ease;
 }
 .service-card:hover .service-card-image img { transform: scale(1.06); }
