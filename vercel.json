@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/bring.html",
+      "destination": "/what-to-bring.html",
+      "permanent": true
+    }
+  ]
+}

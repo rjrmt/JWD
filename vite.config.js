@@ -7,7 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         register: resolve(__dirname, 'register.html'),
-        bring: resolve(__dirname, 'bring.html'),
+        bring: resolve(__dirname, 'what-to-bring.html'),
         shop: resolve(__dirname, 'shop.html'),
       },
     },
