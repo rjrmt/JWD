@@ -1,3 +1,5 @@
+import { JWD_CONFIG } from './config.js';
+
 (function () {
   'use strict';
 
@@ -138,5 +140,133 @@
       selected.classList.add('is-selected');
       selected.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
+  }
+
+  const bringTabs = document.querySelector('.bring-tablist');
+  if (bringTabs) {
+    const tabs = bringTabs.querySelectorAll('[data-bring-tab]');
+    const panels = document.querySelectorAll('[data-bring-panel]');
+
+    const activateBringTab = (id) => {
+      if (!COURSES[id]) id = 'concealed-carry';
+
+      tabs.forEach((tab) => {
+        const isActive = tab.getAttribute('data-bring-tab') === id;
+        tab.classList.toggle('is-active', isActive);
+        tab.setAttribute('aria-selected', String(isActive));
+        tab.tabIndex = isActive ? 0 : -1;
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.getAttribute('data-bring-panel') === id;
+        panel.classList.toggle('is-active', isActive);
+        panel.hidden = !isActive;
+      });
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const id = tab.getAttribute('data-bring-tab');
+        activateBringTab(id);
+        history.replaceState(null, '', `?course=${id}#courses`);
+      });
+    });
+
+    activateBringTab(courseParam && COURSES[courseParam] ? courseParam : 'concealed-carry');
+
+    if (courseParam && window.location.hash === '#courses') {
+      requestAnimationFrame(() => {
+        document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }
+
+  const printChecklistBtn = document.getElementById('printChecklist');
+  if (printChecklistBtn) {
+    printChecklistBtn.addEventListener('click', () => window.print());
+  }
+
+  const COURSE_FORM_VALUES = {
+    'concealed-carry': 'Concealed Carry Course ($125)',
+    'private-lessons': 'Private Lessons ($65/session)',
+    'gun-safety': 'Gun Safety Seminar ($200)',
+  };
+
+  const enrollForm = document.getElementById('enrollForm');
+  const enrollStatus = document.getElementById('enrollFormStatus');
+  const enrollSubmit = document.getElementById('enrollSubmit');
+  const enrollCourseSelect = document.getElementById('enrollCourse');
+
+  if (enrollCourseSelect && courseParam && COURSE_FORM_VALUES[courseParam]) {
+    enrollCourseSelect.value = COURSE_FORM_VALUES[courseParam];
+  }
+
+  if (enrollForm) {
+    const formspreeId = JWD_CONFIG.formspreeEnrollId;
+    const isConfigured = formspreeId && formspreeId !== 'YOUR_FORM_ID';
+
+    if (isConfigured) {
+      enrollForm.action = `https://formspree.io/f/${formspreeId}`;
+    }
+
+    enrollForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!enrollForm.checkValidity()) {
+        enrollForm.reportValidity();
+        return;
+      }
+
+      if (!isConfigured) {
+        if (enrollStatus) {
+          enrollStatus.textContent =
+            'Online enrollment is being finalized. Please call (754) 667-0784 or email Info@justwrightdefense.com.';
+          enrollStatus.className = 'form-status form-status--error';
+          enrollStatus.hidden = false;
+        }
+        return;
+      }
+
+      if (enrollSubmit) {
+        enrollSubmit.disabled = true;
+        enrollSubmit.textContent = 'Sending…';
+      }
+      if (enrollStatus) {
+        enrollStatus.hidden = true;
+        enrollStatus.className = 'form-status';
+      }
+
+      try {
+        const res = await fetch(enrollForm.action, {
+          method: 'POST',
+          body: new FormData(enrollForm),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (!res.ok) throw new Error('Formspree request failed');
+
+        enrollForm.reset();
+        if (enrollCourseSelect && courseParam && COURSE_FORM_VALUES[courseParam]) {
+          enrollCourseSelect.value = COURSE_FORM_VALUES[courseParam];
+        }
+        if (enrollStatus) {
+          enrollStatus.textContent = 'Thanks! Quenton will reach out shortly to confirm your course and schedule.';
+          enrollStatus.className = 'form-status form-status--success';
+          enrollStatus.hidden = false;
+        }
+      } catch {
+        if (enrollStatus) {
+          enrollStatus.textContent =
+            'Something went wrong. Please call (754) 667-0784 or email Info@justwrightdefense.com.';
+          enrollStatus.className = 'form-status form-status--error';
+          enrollStatus.hidden = false;
+        }
+      } finally {
+        if (enrollSubmit) {
+          enrollSubmit.disabled = false;
+          enrollSubmit.textContent = 'Submit Enrollment';
+        }
+      }
+    });
   }
 })();

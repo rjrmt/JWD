@@ -4,14 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What to Bring | Just Wright Defense</title>
-  <meta name="description" content="Everything you need for your Just Wright Defense training class. We supply eye protection, ear protection, firearms, ammo, and range fees.">
+  <meta name="description" content="Class prep checklist for Just Wright Defense. Valid ID and closed-toe shoes — we supply eye and ear protection, firearms, ammo, targets, and range fees.">
   <meta name="theme-color" content="#1a1816">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="page-bring">
 
   <div class="bg-ambient" aria-hidden="true"></div>
 
@@ -56,44 +59,152 @@
     </div>
   </nav>
 
-  <main>
-    <section class="page-hero">
+  <main id="bringChecklist">
+    <section class="page-hero page-hero--compact">
       <div class="page-hero-bg" aria-hidden="true">
         <img src="assets/services/hero-safety.jpg" alt="">
       </div>
       <div class="container reveal">
-        <p class="eyebrow">Come Prepared</p>
+        <p class="eyebrow">Class Prep</p>
         <h1 class="display">What to Bring</h1>
-        <p class="lead">Show up ready to learn — I supply everything else. Seriously, that's it.</p>
+        <p class="lead">Three things from you. Everything else from us.</p>
+        <p class="bring-hero-meta">
+          <button type="button" class="bring-print-link" id="printChecklist">Print checklist</button>
+          <span aria-hidden="true">·</span>
+          <a href="register.html">Ready to enroll?</a>
+        </p>
       </div>
     </section>
 
-    <section class="page-content">
-      <div class="container">
-        <div class="bring-grid reveal">
-          <div class="bring-card glass">
-            <h3>What Do I Need for Class?</h3>
-            <ul>
-              <li><span class="check" aria-hidden="true">✓</span> An open mind and a willingness to learn! Everything else will be supplied for you.</li>
-            </ul>
-          </div>
-          <div class="bring-card glass">
-            <h3>What Will Be Supplied for You?</h3>
-            <ul>
-              <li><span class="check" aria-hidden="true">✓</span> Eye protection</li>
-              <li><span class="check" aria-hidden="true">✓</span> Ear protection</li>
-              <li><span class="check" aria-hidden="true">✓</span> Targets</li>
-              <li><span class="check" aria-hidden="true">✓</span> Firearms &amp; ammo</li>
-              <li><span class="check" aria-hidden="true">✓</span> Range fees</li>
-            </ul>
-          </div>
-        </div>
+    <section class="page-content page-content--bring">
+      <div class="container bring-shell">
 
-        <div class="enroll-card glass reveal" style="margin-top:1.5rem;text-align:center;">
-          <h3>Ready to Train?</h3>
-          <p style="margin-bottom:1rem;">No gear? No problem. Just bring yourself.</p>
-          <a href="register.html" class="btn btn-primary">Enroll Today</a>
-        </div>
+        <section class="bring-block bring-essentials reveal" aria-labelledby="bringEssentialsTitle">
+          <div class="bring-essentials-grid">
+            <div class="bring-essentials-you">
+              <h2 id="bringEssentialsTitle" class="bring-block-title">You bring</h2>
+              <ol class="bring-essentials-list">
+                <li>
+                  <span class="bring-essentials-num" aria-hidden="true">1</span>
+                  <span>Valid government-issued photo ID</span>
+                </li>
+                <li>
+                  <span class="bring-essentials-num" aria-hidden="true">2</span>
+                  <span>Closed-toe shoes</span>
+                </li>
+                <li>
+                  <span class="bring-essentials-num" aria-hidden="true">3</span>
+                  <span>An open mind — we'll handle the rest</span>
+                </li>
+              </ol>
+            </div>
+            <div class="bring-essentials-we">
+              <h2 class="bring-block-title">We supply</h2>
+              <ul class="bring-supply-list">
+                <li>Eye &amp; ear protection</li>
+                <li>Firearms &amp; ammunition</li>
+                <li>Targets &amp; range fees</li>
+              </ul>
+              <p class="bring-essentials-note">Optional: water, notepad, hat, light snack.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bring-block bring-tabs reveal" id="courses" aria-labelledby="bringCoursesTitle">
+          <div class="bring-block-intro">
+            <h2 id="bringCoursesTitle" class="bring-block-title bring-block-title--lg">By course</h2>
+            <p class="bring-block-lead">Location and time are confirmed when you enroll.</p>
+          </div>
+
+          <div class="bring-tablist" role="tablist" aria-label="Course type">
+            <button type="button" class="bring-tab is-active" role="tab" id="tab-concealed-carry" aria-selected="true" aria-controls="panel-concealed-carry" data-bring-tab="concealed-carry">Concealed Carry</button>
+            <button type="button" class="bring-tab" role="tab" id="tab-private-lessons" aria-selected="false" aria-controls="panel-private-lessons" data-bring-tab="private-lessons" tabindex="-1">Private Lessons</button>
+            <button type="button" class="bring-tab" role="tab" id="tab-gun-safety" aria-selected="false" aria-controls="panel-gun-safety" data-bring-tab="gun-safety" tabindex="-1">Gun Safety</button>
+          </div>
+
+          <div class="bring-tabpanels">
+            <article class="bring-panel is-active" role="tabpanel" id="panel-concealed-carry" aria-labelledby="tab-concealed-carry" data-bring-panel="concealed-carry">
+              <dl class="bring-facts">
+                <div><dt>Format</dt><dd>Classroom + live range qualification</dd></div>
+                <div><dt>Duration</dt><dd>About 4–6 hours (half day)</dd></div>
+                <div><dt>ID</dt><dd>Required for certification paperwork</dd></div>
+                <div><dt>Firearms</dt><dd>All gear provided — no personal gun needed</dd></div>
+              </dl>
+              <a href="register.html?course=concealed-carry" class="bring-panel-link">Register for concealed carry →</a>
+            </article>
+
+            <article class="bring-panel" role="tabpanel" id="panel-private-lessons" aria-labelledby="tab-private-lessons" data-bring-panel="private-lessons" hidden>
+              <dl class="bring-facts">
+                <div><dt>Format</dt><dd>One-on-one coaching at your pace</dd></div>
+                <div><dt>Duration</dt><dd>Typically 1–2 hours per session</dd></div>
+                <div><dt>ID</dt><dd>Recommended for your first visit</dd></div>
+                <div><dt>Your firearm</dt><dd>Optional — bring yours or use ours</dd></div>
+              </dl>
+              <a href="register.html?course=private-lessons" class="bring-panel-link">Register for private lessons →</a>
+            </article>
+
+            <article class="bring-panel" role="tabpanel" id="panel-gun-safety" aria-labelledby="tab-gun-safety" data-bring-panel="gun-safety" hidden>
+              <dl class="bring-facts">
+                <div><dt>Format</dt><dd>Group seminar; range when scheduled</dd></div>
+                <div><dt>Duration</dt><dd>Varies by group size</dd></div>
+                <div><dt>ID</dt><dd>Required for roster and safety records</dd></div>
+                <div><dt>Best for</dt><dd>Families, workplaces, first-time shooters</dd></div>
+              </dl>
+              <a href="register.html?course=gun-safety" class="bring-panel-link">Register for gun safety →</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="bring-block bring-day reveal" aria-labelledby="bringDayTitle">
+          <div class="bring-day-card glass">
+            <h2 id="bringDayTitle" class="bring-block-title bring-block-title--lg">Day of class</h2>
+            <ol class="bring-steps">
+              <li>
+                <strong>Before you leave</strong>
+                <span>ID, closed-toe shoes, comfortable clothes, water.</span>
+              </li>
+              <li>
+                <strong>When you arrive</strong>
+                <span>Safety briefing, sign-in, and supplied protective gear.</span>
+              </li>
+              <li>
+                <strong>After class</strong>
+                <span>Next steps and paperwork. Running late? Call <a href="tel:+17546670784">(754) 667-0784</a>.</span>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="bring-block bring-faq reveal" aria-labelledby="bringFaqTitle">
+          <h2 id="bringFaqTitle" class="bring-block-title bring-block-title--lg">Common questions</h2>
+          <div class="bring-faq-list">
+            <details class="bring-faq-item">
+              <summary>Do I need my own gun?</summary>
+              <p>No — everything is supplied. Private lesson students may bring their own firearm if preferred.</p>
+            </details>
+            <details class="bring-faq-item">
+              <summary>What should I wear?</summary>
+              <p>Closed-toe shoes required. Comfortable, weather-appropriate clothing. Skip loose jewelry or dangling accessories.</p>
+            </details>
+            <details class="bring-faq-item">
+              <summary>I've never held a firearm. Is that okay?</summary>
+              <p>Yes. Quenton works one-on-one at your pace — no crowded classes, no pressure.</p>
+            </details>
+            <details class="bring-faq-item">
+              <summary>What if I need to reschedule?</summary>
+              <p>Call or text <a href="tel:+17546670784">(754) 667-0784</a> as soon as you can and we'll find a new time.</p>
+            </details>
+          </div>
+        </section>
+
+        <aside class="bring-closer reveal">
+          <p class="bring-closer-text">Still have questions?</p>
+          <div class="bring-closer-actions">
+            <a href="tel:+17546670784" class="btn btn-secondary">Call Quenton</a>
+            <a href="register.html" class="btn btn-primary">Enroll Today</a>
+          </div>
+        </aside>
+
       </div>
     </section>
   </main>
@@ -144,29 +255,25 @@
           </nav>
         </div>
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--contact">
           <h3 class="footer-heading">Contact</h3>
           <ul class="footer-contact-list">
             <li>
-              <a href="tel:+17546670784" class="footer-contact-link glass">
+              <a href="tel:+17546670784" class="footer-contact-card footer-contact-card--phone">
                 <span class="footer-contact-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 </span>
-                <span class="footer-contact-text">
-                  <strong>Phone</strong>
-                  (754) 667-0784
-                </span>
+                <span class="footer-contact-label">Phone</span>
+                <span class="footer-contact-value">(754) 667-0784</span>
               </a>
             </li>
             <li>
-              <a href="mailto:Info@justwrightdefense.com" class="footer-contact-link glass">
+              <a href="mailto:Info@justwrightdefense.com" class="footer-contact-card footer-contact-card--email">
                 <span class="footer-contact-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </span>
-                <span class="footer-contact-text">
-                  <strong>Email</strong>
-                  Info@justwrightdefense.com
-                </span>
+                <span class="footer-contact-label">Email</span>
+                <span class="footer-contact-value">Info@justwrightdefense.com</span>
               </a>
             </li>
           </ul>

@@ -6,6 +6,9 @@
   <title>Register | Just Wright Defense</title>
   <meta name="description" content="Enroll in concealed carry courses, private lessons, or gun safety seminars with Just Wright Defense. Contact Quenton Wright today.">
   <meta name="theme-color" content="#1a1816">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -102,6 +105,63 @@
           </a>
         </div>
 
+        <div class="enroll-form-wrap reveal">
+          <div class="enroll-form-head">
+            <p class="eyebrow">Quick Enrollment</p>
+            <h2 class="enroll-form-title">Send Your Details</h2>
+            <p class="enroll-form-lead">Fill this out and Quenton will reach out to confirm your course and schedule.</p>
+          </div>
+
+          <form id="enrollForm" class="enroll-form glass" novalidate>
+            <div class="form-row form-row--2">
+              <div class="form-field">
+                <label for="enrollName">Full name</label>
+                <input type="text" id="enrollName" name="name" autocomplete="name" required placeholder="Your name">
+              </div>
+              <div class="form-field">
+                <label for="enrollPhone">Phone</label>
+                <input type="tel" id="enrollPhone" name="phone" autocomplete="tel" required placeholder="(754) 555-1234">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="enrollEmail">Email</label>
+              <input type="email" id="enrollEmail" name="email" autocomplete="email" required placeholder="you@email.com">
+            </div>
+            <div class="form-row form-row--2">
+              <div class="form-field">
+                <label for="enrollCourse">Course interest</label>
+                <select id="enrollCourse" name="course" required>
+                  <option value="">Select a course</option>
+                  <option value="Concealed Carry Course ($125)">Concealed Carry Course — $125</option>
+                  <option value="Private Lessons ($65/session)">Private Lessons — $65/session</option>
+                  <option value="Gun Safety Seminar ($200)">Gun Safety Seminar — $200</option>
+                  <option value="Not sure yet">Not sure yet — help me choose</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="enrollExperience">Experience level</label>
+                <select id="enrollExperience" name="experience" required>
+                  <option value="">Select level</option>
+                  <option value="Complete beginner">Complete beginner</option>
+                  <option value="Some experience">Some experience</option>
+                  <option value="Experienced shooter">Experienced shooter</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="enrollMessage">Anything else? <span class="form-optional">(optional)</span></label>
+              <textarea id="enrollMessage" name="message" rows="3" placeholder="Preferred days, questions, or goals…"></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="New JWD enrollment request">
+            <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="enrollSubmit">Submit Enrollment</button>
+              <p class="form-note">Prefer to talk? <a href="tel:+17546670784">Call (754) 667-0784</a></p>
+            </div>
+            <p class="form-status" id="enrollFormStatus" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+
         <div class="enroll-cards reveal">
           <div class="enroll-card glass">
             <h3>01 — Enroll</h3>
@@ -123,52 +183,71 @@
           </div>
         </div>
 
-        <div class="reveal" style="margin-top:2.5rem;">
-          <p class="eyebrow">Reach Quenton Directly</p>
+        <div class="contact-panel reveal">
+          <div class="contact-panel-head">
+            <p class="eyebrow">Reach Quenton Directly</p>
+            <p class="contact-panel-lead">Pick the fastest way to reach out — each option goes straight to Quenton.</p>
+          </div>
           <div class="contact-methods">
-            <a href="tel:+17546670784" class="contact-method glass">
+            <a href="tel:+17546670784" class="contact-method contact-method--phone">
               <div class="icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </div>
-              <div>
+              <div class="contact-method-body">
                 <strong>Phone</strong>
-                (754) 667-0784
+                <span class="contact-method-value">(754) 667-0784</span>
               </div>
             </a>
-            <a href="mailto:Info@justwrightdefense.com" class="contact-method glass">
+            <a href="mailto:Info@justwrightdefense.com" class="contact-method contact-method--email">
               <div class="icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
-              <div>
+              <div class="contact-method-body">
                 <strong>Email</strong>
-                Info@justwrightdefense.com
+                <span class="contact-method-value">Info@justwrightdefense.com</span>
               </div>
             </a>
-            <a href="https://www.instagram.com/justwrightdefense" class="contact-method glass" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/justwrightdefense" class="contact-method contact-method--instagram" target="_blank" rel="noopener noreferrer">
               <div class="icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
               </div>
-              <div>
+              <div class="contact-method-body">
                 <strong>Instagram</strong>
-                @justwrightdefense
+                <span class="contact-method-value">@justwrightdefense</span>
               </div>
             </a>
-            <a href="https://www.facebook.com/Justwrightdefense" class="contact-method glass" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/Justwrightdefense" class="contact-method contact-method--facebook" target="_blank" rel="noopener noreferrer">
               <div class="icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </div>
-              <div>
+              <div class="contact-method-body">
                 <strong>Facebook</strong>
-                @Justwrightdefense
+                <span class="contact-method-value">@Justwrightdefense</span>
               </div>
             </a>
           </div>
         </div>
 
-        <p class="services-note reveal" style="margin-top:2rem;text-align:center;">
-          Serving <strong style="color:var(--white);">Broward, Miami-Dade, and Palm Beach</strong> counties.
-          <br><a href="what-to-bring.html">See what to bring to class →</a>
-        </p>
+        <div class="area-prep-banner reveal">
+          <div class="area-prep-main">
+            <p class="eyebrow">Where We Train</p>
+            <h3 class="area-prep-title">South Florida · 3 Counties</h3>
+            <p class="area-prep-lead">Private sessions across Broward, Miami-Dade, and Palm Beach — we meet you where training makes sense.</p>
+            <div class="area-prep-counties">
+              <span>Broward</span>
+              <span>Miami-Dade</span>
+              <span>Palm Beach</span>
+            </div>
+          </div>
+          <div class="area-prep-action">
+            <div class="area-prep-action-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <p class="area-prep-action-label">Before your first session</p>
+            <p class="area-prep-action-text">See what to bring — and what's already covered for you.</p>
+            <a href="what-to-bring.html" class="btn btn-primary">View Class Checklist</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -219,29 +298,25 @@
           </nav>
         </div>
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--contact">
           <h3 class="footer-heading">Contact</h3>
           <ul class="footer-contact-list">
             <li>
-              <a href="tel:+17546670784" class="footer-contact-link glass">
+              <a href="tel:+17546670784" class="footer-contact-card footer-contact-card--phone">
                 <span class="footer-contact-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 </span>
-                <span class="footer-contact-text">
-                  <strong>Phone</strong>
-                  (754) 667-0784
-                </span>
+                <span class="footer-contact-label">Phone</span>
+                <span class="footer-contact-value">(754) 667-0784</span>
               </a>
             </li>
             <li>
-              <a href="mailto:Info@justwrightdefense.com" class="footer-contact-link glass">
+              <a href="mailto:Info@justwrightdefense.com" class="footer-contact-card footer-contact-card--email">
                 <span class="footer-contact-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </span>
-                <span class="footer-contact-text">
-                  <strong>Email</strong>
-                  Info@justwrightdefense.com
-                </span>
+                <span class="footer-contact-label">Email</span>
+                <span class="footer-contact-value">Info@justwrightdefense.com</span>
               </a>
             </li>
           </ul>
